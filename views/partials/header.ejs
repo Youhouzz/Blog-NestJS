@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <% const stylesheets = ["/global.css", "/auth.css"]; %>
+   <% stylesheets.forEach(function(sheet) { %>
+      <link rel="stylesheet" href="<%= sheet %>">
+   <% }) %>
+   <title><%= title %></title>
+</head>
+<body>
+    <nav class="navigation">
+        <h1>Mon blog</h1>
+        <ul>
+            <li><a href="/user/signup">Inscription</a></li>
+            <li><a href="/user/login">Connexion</a></li>
+            <li><form action="/user/logout" method="POST">
+                <button type="submit">Deconnexion</button>
+            </form></li>
+        </ul>
+    </nav>
